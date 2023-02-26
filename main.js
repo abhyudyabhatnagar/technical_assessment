@@ -6,17 +6,17 @@ function onPageLoad(){
 }
 
 function answer_3(){
-    const form = document.getElementById("hubspotutk");
-    form.addEventListener("submit", function(event){
-        event.preventDefault();
+    const form3 = document.getElementById("hubspotutk");
+    form3.addEventListener("submit", function(e){
+        e.preventDefault();
         document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
 });
 }
 
 function answer_4(){
-    const form = document.getElementById("phonetics");
+    const form4 = document.getElementById("phonetics");
 
-    form.addEventListener("submit", function(event) {
+    form4.addEventListener("submit", function(event) {
         event.preventDefault();
 
         var searchTerm = document.getElementById("searchInput").value;
