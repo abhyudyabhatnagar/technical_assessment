@@ -25,15 +25,15 @@
         
         <p>
             <strong>Load balancer: </strong>
-            User`s browser sends a http request using the single point URL, https://collection.celebrus.com, provided by Celebrus. 
-            The load balancer, placed in front of cluster of servers receives all incoming traffic. 
+            User`s browser sends a http request using a single endpoint URL, https://collection.celebrus.com, provided by Celebrus. 
+            The load balancer, placed in front of server cluster, receives all incoming traffic. 
             It use a suitable routing algorithm such as round robin, weighted round robin, least connection, IP hash, etc. 
             to determine which server should receive the incoming data package.
             <br> 
             <strong>Load balancer algorithm: </strong>
             Routing algorithm can be determined based on factors such as available servers in the cluster, 
             load on each available server, and amount of traffic. AWS ELB and Azure Load balancer commonly use round robin or least connection routing algorithm whereas an ‘on-premise’ 
-            Nginx load balancer can allow for more flexibility and can be configured the following way:
+            Nginx load balancer can allow for more flexibility. Nginx can be configured the following way:
             
             <pre><code>
     http {
@@ -93,13 +93,14 @@
                 </tr>
                 <tr>
                     <td>Transparency</td>
-                    <td colspan="2">Both require transparency related to how they collect, use and share personal data</td>
+                    <td colspan="2">Both regulations require transparency related to how personal data is collected, 
+                        used and shared.</td>
                 </tr>
                 <tr>
                     <td>Individual Rights</td>
-                    <td colspan="2">Individuals the right to access and delete their personal data. 
-                        GDPR provides additional rights to rectify incorrect data and 
-                        right to data portability</td>
+                    <td colspan="2">Both regulations require individual`s right to access and delete their personal data. 
+                        GDPR provides additional rights that allow individuals to rectify incorrect data and 
+                        right to data portability.</td>
 
                 </tr>
                 <tr>
