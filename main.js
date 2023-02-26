@@ -1,16 +1,12 @@
 function onPageLoad(){
     console.log("JS is running");
-    answer_3();
+    document.getElementById("ans3_bt").addEventListener("click", answer_3);
     answer_4();
     
-}
+};
 
 function answer_3(){
-    const form3 = document.getElementById("hubspotutk");
-    form3.addEventListener("submit", function(e){
-        e.preventDefault();
-        document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
-});
+    document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
 }
 
 function answer_4(){
