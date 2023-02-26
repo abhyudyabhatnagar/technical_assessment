@@ -7,7 +7,7 @@ function onPageLoad(){
 
 function answer_3(){
     const form = document.getElementById("hubspotutk");
-    form.addEventListener("submit",function(event){
+    form.addEventListener("submit", function(event){
         event.preventDefault();
         document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
 });
