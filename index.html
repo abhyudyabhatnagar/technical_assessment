@@ -16,24 +16,24 @@
 
     <div>
         <h5>Answer 1 - Collection</h5>
-        <p>To direct data packages from a user’s browser to one of the collection servers in the cluster, a
+        <p>To direct data packages from a user’s browser to one of the collection servers in cluster, a
              load balancing architecture can be implemented as shown in figure below. 
-             The load balancer can be implemented either using AWS ELB/ Azure Load Balancer or 
+             Described architecture can be implemented either using AWS ELB/ Azure Load Balancer or 
              set up using an on-premise server such as Nginx. </p>
         <img src="media/architecture design.png" alt="architecture design diagram"><br>
         <label><em> Figure: Architecture design diagram</em></label>
         
         <p>
             <strong>Load balancer: </strong>
-            The user will send an Http request using the single point URL provided by Celebrus such as   https://collection.celebrus.com. 
-            The load balancer, placed in front of the cluster of servers, will receive all incoming traffic from the user’s browser. 
-            The load balancer will use a suitable routing algorithm such as round robin, weighted round robin, least connection, IP hash, etc. to determine which server should receive the data package.
+            User`s browser sends a http request using the single point URL, https://collection.celebrus.com, provided by Celebrus. 
+            The load balancer, placed in front of cluster of servers receives all incoming traffic. 
+            It use a suitable routing algorithm such as round robin, weighted round robin, least connection, IP hash, etc. 
+            to determine which server should receive the incoming data package.
             <br> 
             <strong>Load balancer algorithm: </strong>
-            Load balancer routing algorithm can be determined based on factors such as 
-            available servers in the cluster, load on each available server, and the 
-            amount of traffic. AWS ELB and Azure Load balancer commonly use round robin or least connection routing algorithm. 
-            The ‘on premise’ load balancer such as Nginx can allow for more flexibility and can be configured the following way:
+            Routing algorithm can be determined based on factors such as available servers in the cluster, 
+            load on each available server, and amount of traffic. AWS ELB and Azure Load balancer commonly use round robin or least connection routing algorithm whereas an ‘on-premise’ 
+            Nginx load balancer can allow for more flexibility and can be configured the following way:
             
             <pre><code>
     http {
@@ -59,21 +59,19 @@
     }
             </code></pre>
             <strong>Monitoring system: </strong>
-            The monitoring system is configured to monitor the health and performance of the system. 
-            It can help identify issues that could impact the user experience. 
+            It is configured to monitor health and performance of the system. 
+            It can help identify issues that could impact user experience. 
             It keeps a track of metrics such as CPU utilization, network traffic, downtime, etc. 
-            Implementing a monitoring system can be done via AWS/ Azure monitor services or other open source software such as Prometheus.
+            Implementing a monitoring system can be done via AWS/ Azure monitor services or other 
+            open source software such as Prometheus.
         </p>
     </div>
 
     <div>
         <h5>Answer 2- Data Protection</h5>
         <p>The General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA) 
-            significantly impact data capture practices. These regulations mandate that organizations must process 
-            personal data lawfully and fairly through transparency, proper consent from users, and 
-            provision of access to delete their personal data. 
-            To comply with GDPR and CCPA, organizations must establish and maintain robust procedures for 
-            collecting and processing personal data as it can significantly impact their core operations.
+            significantly impact data capture practices. These regulations impose strict obligations on organizations to 
+            process personal data lawfully and equitably, necessitating transparency, user consent, and the right to delete personal data.
             <br>
             Key differences between the two regulations and how they impact data capture:
             <table>
@@ -94,7 +92,7 @@
                     <td>Notice and the ability to opt-out</td>
                 </tr>
                 <tr>
-                    <td>transparency</td>
+                    <td>Transparency</td>
                     <td colspan="2">Both require transparency related to how they collect, use and share personal data</td>
                 </tr>
                 <tr>
@@ -123,9 +121,8 @@
 
     <div class="cookie_details">
         <h5>Answer 3 - JavaScript</h5>
-        <p>This section will display the details captured from the D4t4 solutions cookie.
-            The value of the cookie was read by visiting the URL and running the 
-            following command on the JavaScript console:
+        <p>Value of cookie was captured by visiting d4t4solutions.com URL and running the 
+            following command on browser`s DevTools console:
             <pre><code>
 document.cookie.match('(^|;)\\s*' + 'hubspotutk' + '\\s*=\\s*([^;]+)').pop();
             </code></pre>
