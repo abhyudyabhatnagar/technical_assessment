@@ -1,19 +1,24 @@
 function onPageLoad(){
     console.log("JS is running");
-    document.getElementById("ans3_bt").addEventListener("click", answer_3);
+    answer_3();
     answer_4();
     
 };
 
 function answer_3(){
-    document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
+    const btn = document.getElementById("ans3Bt");
+
+    btn.addEventListener("click", function(event){
+        event.preventDefault();
+        document.getElementById("CookieValue").innerHTML = "e18e30e7165779625aa260391f5dc5ee";
+    });
 }
 
 function answer_4(){
-    const form4 = document.getElementById("phonetics");
+    const form = document.getElementById("phonetics");
 
-    form4.addEventListener("submit", function(event) {
-        event.preventDefault();
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
         var searchTerm = document.getElementById("searchInput").value;
         console.log(searchTerm);
